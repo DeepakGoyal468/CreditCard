@@ -1,0 +1,105 @@
+.debit-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
+  height: 240px;
+  width: 80%;
+  position: relative;
+  top: -135px;
+  border-radius: 16px;
+  margin-bottom: -100px;
+  color: #fff;
+}
+
+.card-type {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 32px);
+  margin: 20px 20px 0 20px;
+}
+
+.debit-card-number {
+  background-color: transparent;
+  margin: 32px 20px;
+  border: 1px solid#fff;
+  height: 40px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.card-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+  margin: 0 20px 20px 20px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-key {
+  font-size: 14px;
+  color: #f5f5f5;
+  font-family: "Courier New", Courier, monospace, sans-serif;
+  font-weight: 500;
+}
+
+.card-value {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 5px;
+}
+
+.black-strip {
+  background-color: #000;
+  height: 40px;
+  margin: 24px 0 16px 0;
+  opacity: 0.9;
+}
+
+.cvv {
+  height: 40px;
+  width: calc(100% - 42px);
+  margin: 0 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
+  color: #000;
+  padding-right: 10px;
+  border-radius: 4px;
+}
+
+.cvv-text {
+  width: calc(100% - 42px);
+  margin: 5px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+.back-card-type {
+  width: calc(100% - 32px);
+  margin: 24px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
