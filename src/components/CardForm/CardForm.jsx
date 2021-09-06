@@ -42,7 +42,7 @@ const CardForm = () => {
         setCardType(cardType);
         
         var matches = cardNumber.match(/\d{4,16}/g);
-        var match = matches && matches[0] || '';
+        var match = matches && (matches[0] || '');
         var numbers = []
         for (let i=0; i<match.length; i+=4) {
             numbers.push(match.substring(i, i+4))
