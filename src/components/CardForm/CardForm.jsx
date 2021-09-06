@@ -25,32 +25,32 @@ const CardForm = () => {
 
     const checkCardType = (cardNumber) => {
         let error = {};
+        let cardValid = true;
         setCardNumber('');
         if(!cardNumber || !Number(cardNumber) || cardNumber.length!==16){
-            error.cardNumber = "Card not valid";   
+            error.cardNumber = "Card not valid"; 
+            cardValid = false;  
         }
         const cardType = getCardType(cardNumber);
         if(!cardType){
             error.cardNumber = "Card not valid";
+            cardValid = false;
         }
         setErrors(error);
-        if(error.number){
-            setCardType('');
-            return;
-        }
+        if(cardValid){
+            setCardType(cardType);
         
-        setCardType(cardType);
-        
-        var matches = cardNumber.match(/\d{4,16}/g);
-        var match = matches && (matches[0] || '');
-        var numbers = []
-        for (let i=0; i<match.length; i+=4) {
-            numbers.push(match.substring(i, i+4))
+            var matches = cardNumber.match(/\d{4,16}/g);
+            var match = matches && matches[0];
+            var numbers = []
+            for (let i=0; i<match.length; i+=4) {
+                numbers.push(match.substring(i, i+4))
+            }
+            if (numbers.length) {
+                cardNumber =  numbers.join(' ')
+            } 
+            setCardNumber(cardNumber);
         }
-        if (numbers.length) {
-            cardNumber =  numbers.join(' ')
-        } 
-        setCardNumber(cardNumber);
     }
 
     const flipCard = (value) => {
@@ -62,7 +62,7 @@ const CardForm = () => {
         let validForm = true;
         let error = {};
 
-        if(!cardNumber || !Number(cardNumber) || cardNumber.length!==16){
+        if(!cardNumber){
             validForm = false;
             error.cardNumber = "Card not valid";   
         }
